@@ -1,0 +1,41 @@
+{
+  "DREAMING": {
+    "Ability": {
+      "Might": { "long": "Might", "abbr": "Might" },
+      "Edge": { "long": "Edge", "abbr": "Edge" },
+      "Grit": { "long": "Grit", "abbr": "Grit" },
+      "Wits": { "long": "Wits", "abbr": "Wits" },
+      "Flex": { "long": "Flex", "abbr": "Flex" }
+      
+    },
+    "SheetLabels": {
+      "Actor": "dreaming Actor Sheet",
+      "Item": "dreaming Item Sheet"
+    },
+    "Item": {
+      "Spell": {
+        "SpellLVL": "Level {level} Spells",
+        "AddLVL": "Add LVL {level}"
+      }
+    },
+    "Effect": {
+      "Source": "Source",
+      "Toggle": "Toggle Effect",
+      "Temporary": "Temporary Effects",
+      "Passive": "Passive Effects",
+      "Inactive": "Inactive Effects"
+    }
+  },
+
+  "TYPES": {
+    "Actor": {
+      "character": "Character",
+      "npc": "NPC"
+    },
+    "Item": {
+      "item": "Item",
+      "feature": "Feature",
+      "spell": "Spell"
+    }
+  }
+}

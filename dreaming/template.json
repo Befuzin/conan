@@ -1,0 +1,78 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "health": {
+          "value": 20,
+          "min": 0,
+          "max": 20
+        },
+        "power": {
+          "value": 5,
+          "min": 0,
+          "max": 5
+        },
+        "biography": ""
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "attributes": {
+        "XP": {
+          "value": 0
+        }
+      },
+      "abilities": {
+        "might": {
+          "modifier": 5,
+          "value": "d6"
+        }, 
+        "edge": {
+          "modifier": 0,
+          "value": 10
+        },
+        "grit": {
+          "dice":"d6",
+          "value": 10
+        },
+        "wits": {
+          "modifier": 0,
+          "value": "d6"
+        },
+        "flex": {
+          "modifier": 0,
+          "value": "d10"
+        }
+      }
+    },
+
+
+
+    "npc": {
+      "templates": ["base"],
+      "cr": 0
+    }
+  },
+  "Item": {
+    "types": ["item", "feature", "spell"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": 0,
+      "formula": "d20 + @str.mod + ceil(@lvl / 2)"
+    },
+    "feature": {
+      "templates": ["base"]
+    },
+    "spell": {
+      "templates": ["base"],
+      "spellLevel": 1
+    }
+  }
+}
