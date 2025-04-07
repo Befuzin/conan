@@ -26,7 +26,8 @@
       "abilities": {
         "might": {
           "modifier": 5,
-          "value": "d6"
+          "value": "d6",
+          "total": "abilities.might.value+abilities.might.modifier"
         }, 
         "edge": {
           "modifier": 0,

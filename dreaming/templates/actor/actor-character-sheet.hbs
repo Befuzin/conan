@@ -56,16 +56,41 @@
           {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
           use both the "grid" and "grid-Ncol" class where "N" can be any number
           from 1 to 12 and will create that number of columns.  --}}
-          <div class="abilities flexcol">
-            {{#each system.abilities as |ability key|}}
-            <div class="ability flexrow flex-group-center">
-              <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="@abilities.{{key}}.value+@abilities.{{key}}.modifier" data-label="{{localize (lookup @root.config.abilities key)}}">{{localize (lookup @root.config.abilities key)}}</label>
-              <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}"/>
-               <input type="text" name="system.abilities.{{key}}.modifier" value="{{ability.modifier}}"/>
-              
-            </div>
-            {{/each}}
-          </div>
+<div class="abilities flexcol">
+  {{#each system.abilities as |ability key|}}
+  <div class="ability flexrow flex-group-center">
+    <label for="system.abilities.{{key}}.value"
+           class="resource-label rollable flexlarge align-left"
+           data-roll="@abilities.{{key}}.mod"
+           data-label="{{localize (lookup @root.config.abilities key)}}">
+      {{localize (lookup @root.config.abilities key)}}
+    </label>
+
+    <!-- Die Type Dropdown (d4, d6, d8, d10) -->
+    <select name="system.abilities.{{key}}.value">
+      <option value="d4"  {{#if (eq ability.value "d4")}}selected{{/if}}>d4</option>
+      <option value="d6"  {{#if (eq ability.value "d6")}}selected{{/if}}>d6</option>
+      <option value="d8"  {{#if (eq ability.value "d8")}}selected{{/if}}>d8</option>
+      <option value="d10" {{#if (eq ability.value "d10")}}selected{{/if}}>d10</option>
+    </select>
+
+    <!-- Modifier Input -->
+    <input type="number"
+           name="system.abilities.{{key}}.modifier"
+           value="{{ability.modifier}}"
+           placeholder="0"
+           class="modifier-input"/>
+
+    <!-- Computed Roll Formula Display -->
+    <span class="ability-mod rollable"
+          data-roll="@abilities.{{key}}.mod"
+          data-label="{{localize (lookup @root.config.abilities key)}}">
+      {{ability.mod}}
+    </span>
+  </div>
+  {{/each}}
+</div>
+
 
 
 
